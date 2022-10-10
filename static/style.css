@@ -55,7 +55,7 @@ body
     display: flex;
     flex-direction: column;
     gap: 30px;
-    translate: calc(-70px * var(--x)) calc(-70px * var(--y));
+    translate: calc(-70px * var(--x)) calc(-60px * var(--y));
 }
 .container .cube div span
 {
@@ -64,7 +64,7 @@ body
     width: 50px;
     height: 50px;
     background: #dcdcdc;
-    z-index: calc(1 * val(--i));
+    z-index: calc(1 * var(--i));
     transition: 1.5s;
 }
 .container .cube div span:hover
@@ -73,6 +73,7 @@ body
     background: #ef4149;
     filter: drop-shadow(0 0 30px #ef4149);
 }
+
 .container .cube div span::before
 {
     content: '';
@@ -90,6 +91,7 @@ body
     transition: 0s;
     background: #f75d64;
 }
+
 .container .cube div span::after
 {
     content: '';
