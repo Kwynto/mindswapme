@@ -49,7 +49,7 @@ main section .column {
     gap: 30px;
     translate: calc(-70px * var(--x)) calc(-60px * var(--y));
 }
-main section .column span {
+main section .column .box {
     position: relative;
     display: inline-block;
     width: 50px;
@@ -58,13 +58,13 @@ main section .column span {
     z-index: calc(1 * var(--i));
     transition: 1.5s;
 }
-main section .column span:hover {
+main section .column .box:hover {
     transition: 0s;
     background: #ef4149;
     filter: drop-shadow(0 0 30px #ef4149);
 }
 
-main section .column span::before {
+main section .column .box::before {
     content: '';
     position: absolute;
     left: -40px;
@@ -75,12 +75,12 @@ main section .column span::before {
     transform: skewY(45deg);
     transition: 1.5s;
 }
-main section .column span:hover::before {
+main section .column .box:hover::before {
     transition: 0s;
     background: #f75d64;
 }
 
-main section .column span::after {
+main section .column .box::after {
     content: '';
     position: absolute;
     top: -40px;
@@ -92,7 +92,7 @@ main section .column span::after {
     transform: skewX(45deg);
     transition: 1.5s;
 }
-main section .column span:hover::after {
+main section .column .box:hover::after {
     transition: 0s;
     background: #f14e55;
 }
