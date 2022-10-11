@@ -9,7 +9,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #25335b;
+    background: #212b47;
 }
 
 main {
@@ -47,7 +47,7 @@ main section .column {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    translate: calc(-70px * var(--x)) calc(-60px * var(--y));
+    translate: calc(-70px * var(--x)) 0;
 }
 main section .column .box {
     position: relative;
@@ -55,7 +55,7 @@ main section .column .box {
     width: 50px;
     height: 50px;
     background: #dcdcdc;
-    z-index: calc(1 * var(--i));
+    z-index: calc(1 * var(--index));
     transition: 1.5s;
 }
 main section .column .box:hover {
