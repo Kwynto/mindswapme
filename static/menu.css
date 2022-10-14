@@ -5,25 +5,29 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
     background: #2f363e;
 }
 
-.menu {
+.topmenu {
+    display: flex;
+    position: fixed;
+    right: 10px;
+    top: 10px;
+}
+
+.blockmenu {
     position: relative;
     width: 280px;
     height: 280px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: right;
+    align-items: flex-end;
+    transform: rotate(-90deg);
 }
 
-.menu li {
+.blockmenu li {
     position: absolute;
-    left: 0;
+    left: 110px;
     list-style: none;
     transition: 0.5s;
     transition-delay: calc(0.1s * var(--i));
@@ -31,10 +35,10 @@ body {
     transform: rotate(0deg) translateX(110px);
 }
 
-.menu.active li {
-    transform: rotate(calc(360deg / 8 * var(--i))) translateX(0px);
+.blockmenu.active li {
+    transform: rotate(calc(360deg / 11 * var(--i))) translateX(0px);
 }
-.menu li a {
+.blockmenu li a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,17 +48,17 @@ body {
     border: 2px solid var(--clr);
     border-radius: 50%;
     font-size: 1.5em;
-    transform: rotate(calc(360deg / -8 * var(--i)));
+    transform: rotate(calc(360deg / -11 * var(--i) + 90deg));
     transition: 1s;
 }
-.menu li a:hover {
+.blockmenu li a:hover {
     transition: 0s;
     background: var(--clr);
     color: #333;
     box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr), 0 0 50px var(--clr);
 }
 
-.menu .toggle {
+.blockmenu .toggle {
     position: absolute;
     width: 60px;
     height: 60px;
@@ -66,11 +70,11 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    z-index: 10000;
+    z-index: 500;
     font-size: 2em;
     transition: transform 1.25s;
 }
 
-.menu.active .toggle {
+.blockmenu.active .toggle {
     transform: rotate(315deg);
 }
