@@ -118,7 +118,7 @@ main section .column {
     display: flex;
     flex-direction: column;
     gap: 30px; /* между рядами */
-    translate: calc(-70px * var(--x)) 0;
+    translate: calc(-70px * var(--x)) 0; /* между колонками */
 }
 main section .column .box {
     position: relative;
