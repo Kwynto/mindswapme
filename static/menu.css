@@ -8,7 +8,7 @@ body {
     background: #2f363e;
 }
 
-.topmenu {
+header {
     display: flex;
     position: fixed;
     right: 10px;
