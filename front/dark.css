@@ -129,6 +129,7 @@ main section .column .box {
     z-index: calc(1 * var(--index));
     transition: 1.5s;
     cursor: pointer;
+    border-radius: 3px;
 }
 main section .column .box:hover {
     transition: 0s;
@@ -146,6 +147,7 @@ main section .column .box::before {
     transform-origin: right;
     transform: skewY(45deg);
     transition: 1.5s;
+    border-radius: 3px;
 }
 main section .column .box:hover::before {
     transition: 0s;
@@ -163,6 +165,7 @@ main section .column .box::after {
     transform-origin: bottom;
     transform: skewX(45deg);
     transition: 1.5s;
+    border-radius: 3px;
 }
 main section .column .box:hover::after {
     transition: 0s;
