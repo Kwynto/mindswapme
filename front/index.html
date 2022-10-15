@@ -28,58 +28,62 @@
     <main>
         <section>
             <div class="column" style="--x:-1;">
-                <div class="box" style="--index:3;">1</div>
-                <div class="box" style="--index:2;">2</div>
-                <div class="box" style="--index:1;">3</div>
+                <div class="box" style="--index:3;"></div>
+                <div class="box" style="--index:2;"></div>
+                <div class="box" style="--index:1;"></div>
             </div>
             <div class="column" style="--x:0;">
-                <div class="box" style="--index:3;">4</div>
-                <div class="box" style="--index:2;">5</div>
-                <div class="box" style="--index:1;">6</div>
+                <div class="box" style="--index:3;"></div>
+                <div class="box" style="--index:2;"></div>
+                <div class="box" style="--index:1;"></div>
             </div>
             <div class="column" style="--x:1;">
-                <div class="box" style="--index:3;">7</div>
-                <div class="box" style="--index:2;">8</div>
-                <div class="box" style="--index:1;">9</div>
+                <div class="box" style="--index:3;"></div>
+                <div class="box" style="--index:2;"></div>
+                <div class="box" style="--index:1;"></div>
             </div>
         </section>
         
         <section>
             <div class="column" style="--x:-1;">
-                <div class="box" style="--index:3;">10</div>
-                <div class="box" style="--index:2;">11</div>
-                <div class="box" style="--index:1;">12</div>
+                <div class="box" style="--index:3;"></div>
+                <div class="box" style="--index:2;"></div>
+                <div class="box" style="--index:1;"></div>
             </div>
             <div class="column" style="--x:0;">
-                <div class="box" style="--index:3;">13</div>
-                <div class="box" style="--index:2;">14</div>
-                <div class="box" style="--index:1;">15</div>
+                <div class="box" style="--index:3;"></div>
+                <div class="box" style="--index:2;"></div>
+                <div class="box" style="--index:1;"></div>
             </div>
             <div class="column" style="--x:1;">
-                <div class="box" style="--index:3;">16</div>
-                <div class="box" style="--index:2;">17</div>
-                <div class="box" style="--index:1;">18</div>
+                <div class="box" style="--index:3;"></div>
+                <div class="box" style="--index:2;"></div>
+                <div class="box" style="--index:1;"></div>
             </div>
         </section>
         
         <section>
             <div class="column" style="--x:-1;">
-                <div class="box" style="--index:3;">19</div>
-                <div class="box" style="--index:2;">20</div>
-                <div class="box" style="--index:1;">21</div>
+                <div class="box" style="--index:3;"></div>
+                <div class="box" style="--index:2;"></div>
+                <div class="box" style="--index:1;"></div>
             </div>
             <div class="column" style="--x:0;">
-                <div class="box" style="--index:3;">22</div>
-                <div class="box" style="--index:2;">23</div>
-                <div class="box" style="--index:1;">24</div>
+                <div class="box" style="--index:3;"></div>
+                <div class="box" style="--index:2;"></div>
+                <div class="box" style="--index:1;"></div>
             </div>
             <div class="column" style="--x:1;">
-                <div class="box" style="--index:3;">25</div>
-                <div class="box" style="--index:2;">26</div>
-                <div class="box" style="--index:1;">27</div>
+                <div class="box" style="--index:3;" onclick="boxclick('https://github.com/Kwynto');"></div>
+                <div class="box" style="--index:2;"></div>
+                <div class="box" style="--index:1;"></div>
             </div>
         </section>
     </main>
+
+    <footer>
+        <p>Developed by <a href="https://github.com/Kwynto" target="_blank">Kwynto</a>.</p>
+    </footer>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -88,6 +92,10 @@
         let blockmenu = document.querySelector('.blockmenu');
         toggle.onclick = function() {
             blockmenu.classList.toggle('active')
+        }
+        
+        function boxclick(url) {
+            window.open(url, '_blank');
         }
     </script>
 </body>
