@@ -74,7 +74,7 @@
                 <div class="box" style="--index:1;"></div>
             </div>
             <div class="column" style="--x:1;">
-                <div class="box" style="--index:3;">25</div>
+                <div class="box" style="--index:3;" onclick="boxclick('https://github.com/Kwynto');"></div>
                 <div class="box" style="--index:2;"></div>
                 <div class="box" style="--index:1;"></div>
             </div>
@@ -92,6 +92,10 @@
         let blockmenu = document.querySelector('.blockmenu');
         toggle.onclick = function() {
             blockmenu.classList.toggle('active')
+        }
+        
+        function boxclick(url) {
+            window.open(url, '_blank');
         }
     </script>
 </body>
