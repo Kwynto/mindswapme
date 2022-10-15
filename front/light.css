@@ -85,7 +85,7 @@ header {
 
 main {
     position: relative;
-    top: -100px; /* сдвиг куба вверх */
+    top: -100px;
     transform: skewY(-20deg);
     animation: animate 5s linear infinite;
 }
@@ -106,30 +106,30 @@ main section {
 }
 main section:nth-child(2) {
     z-index: 1;
-    translate: -80px -80px; /* между секциями */
+    translate: -80px -80px;
 }
 main section:nth-child(3) {
     z-index: 3;
-    translate: 80px 80px; /* между секциями */
+    translate: 80px 80px;
 }
 
 main section .column {
     position: absolute;
     display: flex;
     flex-direction: column;
-    gap: 30px; /* между рядами */
-    translate: calc(-90px * var(--x)) 0; /* между колонками */
+    gap: 30px;
+    translate: calc(-90px * var(--x)) 0;
 }
 main section .column .box {
     position: relative;
     display: inline-block;
-    width: 75px; /* лицевой квадрат */
-    height: 75px; /* лицевой квадрат */
+    width: 75px;
+    height: 75px;
     background: #c4c4c4;
     z-index: calc(1 * var(--index));
     transition: 1.5s;
     cursor: pointer;
-    border-radius: 3px;
+    /* border-radius: 3px; */
 }
 main section .column .box:hover {
     transition: 0s;
@@ -140,14 +140,14 @@ main section .column .box:hover {
 main section .column .box::before {
     content: '';
     position: absolute;
-    left: -60px; /* боковой квадрат */
-    width: 60px; /* боковой квадрат */
+    left: -60px;
+    width: 60px;
     height: 100%;
     background: #e0e0e0;
     transform-origin: right;
     transform: skewY(45deg);
     transition: 1.5s;
-    border-radius: 3px;
+    /* border-radius: 3px; */
 }
 main section .column .box:hover::before {
     transition: 0s;
@@ -165,7 +165,7 @@ main section .column .box::after {
     transform-origin: bottom;
     transform: skewX(45deg);
     transition: 1.5s;
-    border-radius: 3px;
+    /* border-radius: 3px; */
 }
 main section .column .box:hover::after {
     transition: 0s;
@@ -181,4 +181,8 @@ footer {
     justify-content: right;
     align-items: center;
     color: #e0e0e0;
+}
+
+footer p {
+    font-size: 18px;
 }
