@@ -125,7 +125,7 @@ main section .column .box {
     display: inline-block;
     width: 75px; /* лицевой квадрат */
     height: 75px; /* лицевой квадрат */
-    background: #C4C4C4;
+    background: #c4c4c4;
     z-index: calc(1 * var(--index));
     transition: 1.5s;
     cursor: pointer;
@@ -143,7 +143,7 @@ main section .column .box::before {
     left: -60px; /* боковой квадрат */
     width: 60px; /* боковой квадрат */
     height: 100%;
-    background: #E0E0E0;
+    background: #e0e0e0;
     transform-origin: right;
     transform: skewY(45deg);
     transition: 1.5s;
@@ -161,7 +161,7 @@ main section .column .box::after {
     left: 0;
     width: 100%;
     height: 60px;
-    background: #D1D1D1;
+    background: #d1d1d1;
     transform-origin: bottom;
     transform: skewX(45deg);
     transition: 1.5s;
@@ -170,4 +170,15 @@ main section .column .box::after {
 main section .column .box:hover::after {
     transition: 0s;
     background: #f14e55;
+}
+
+footer {
+    display: flex;
+    position: fixed;
+    right: 10px;
+    bottom: 5px;
+    height: 30px;
+    justify-content: right;
+    align-items: center;
+    color: #e0e0e0;
 }
