@@ -75,7 +75,7 @@
             </div>
             <div class="column" style="--x:1;">
                 <div class="box" style="--index:3;" onclick="boxclick('https://github.com/Kwynto');"></div>
-                <div class="box" style="--index:2;"></div>
+                <div class="box" style="--index:2;" onclick="togglemodal();"></div>
                 <div class="box" style="--index:1;"></div>
             </div>
         </section>
@@ -85,6 +85,15 @@
         <p>Developed by <a href="https://github.com/Kwynto" target="_blank">Kwynto</a>.</p>
     </footer>
 
+    <div class="modal">
+        <div class="modal-window">
+            <div class="btn-modal-close" onclick="togglemodal();"><ion-icon name="close-circle-outline"></ion-icon></div>
+            <h1>Заголовок</h1>
+            <p>Это тело окна. Здесь должно быть содержимое окна.</p>
+        </div>
+        <div class="overlay" onclick="togglemodal();"></div>
+    </div>
+
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script>
@@ -92,6 +101,11 @@
         let blockmenu = document.querySelector('.blockmenu');
         toggle.onclick = function() {
             blockmenu.classList.toggle('active')
+        }
+        
+        function togglemodal() {
+            let modal = document.querySelector('.modal');
+            modal.classList.toggle('show')
         }
         
         function boxclick(url) {
