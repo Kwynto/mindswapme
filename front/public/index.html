@@ -11,7 +11,7 @@
         <ul class="blockmenu">
             <div class="toggle"><ion-icon name="add-outline"></ion-icon></div>
             <li style="--i:0;--clr:#ff2972;">
-                <a href="#"><ion-icon name="home-outline"></ion-icon></a>
+                <a onclick="togglemodal();"><ion-icon name="home-outline"></ion-icon></a>
             </li>
             <li style="--i:1;--clr:#fee800;">
                 <a href="#"><ion-icon name="person-outline"></ion-icon></a>
@@ -75,7 +75,7 @@
             </div>
             <div class="column" style="--x:1;">
                 <div class="box" style="--index:3;" onclick="boxclick('https://github.com/Kwynto');"></div>
-                <div class="box" style="--index:2;" onclick="togglemodal();"></div>
+                <div class="box" style="--index:2;"></div>
                 <div class="box" style="--index:1;"></div>
             </div>
         </section>
@@ -86,12 +86,38 @@
     </footer>
 
     <div class="modal">
-        <div class="modal-window">
-            <div class="btn-modal-close" onclick="togglemodal();"><ion-icon name="close-circle-outline"></ion-icon></div>
-            <h1>Title window.</h1>
-            <p>This is content of modal window.</p>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="box">
+            <div class="square" style="--delay:0;"></div>
+            <div class="square" style="--delay:1;"></div>
+            <div class="square" style="--delay:2;"></div>
+            <div class="square" style="--delay:3;"></div>
+            <div class="square" style="--delay:4;"></div>
+            <div class="container">
+                <div class="btn-modal-close" onclick="togglemodal();"><ion-icon name="close-circle-outline"></ion-icon></div>
+                <h1>Title window.</h1>
+                <p>This is content of modal window. Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis dolorem perspiciatis quo, totam, excepturi magnam repellendus incidunt sapiente aliquam fuga quis similique soluta ratione est in nemo commodi deleniti aliquid?</p>
+                <p></p>
+                <!-- <div class="form">
+                    <h2>Login Form</h2>
+                    <form>
+                        <div class="inputBox">
+                            <input type="text" placeholder="Username">
+                        </div>
+                        <div class="inputBox">
+                            <input type="password" placeholder="Password">
+                        </div>
+                        <div class="inputBox">
+                            <input type="submit" value="Login">
+                        </div>
+                        <p class="forget">Forgot Password ? <a href="#">Click here</a></p>
+                        <p class="forget">Don't have an account ? <a href="#">Sign up</a></p>
+                    </form>
+                </div> -->
+            </div>
         </div>
-        <div class="overlay" onclick="togglemodal();"></div>
     </div>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
