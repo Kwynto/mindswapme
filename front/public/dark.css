@@ -92,12 +92,10 @@ main {
     animation: animate 5s linear infinite;
 }
 @keyframes animate {
-    0%
-    {
+    0% {
         filter: hue-rotate(0deg);
     }
-    100%
-    {
+    100% {
         filter: hue-rotate(360deg);
     }
 }
