@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Mindswap Me (user interface)</title>
+    <script>
+        if (window.matchMedia('(prefers-color-scheme: light)').media === 'not all') {
+            document.documentElement.style.display = 'none';
+            document.head.insertAdjacentHTML('beforeend', '<link rel="stylesheet" href="/dark.css" onload="document.documentElement.style.display = \'\'">');
+        }
+    </script>
     <link rel="stylesheet" href="dark.css" media="(prefers-color-scheme: dark)" />
     <link rel="stylesheet" href="light.css" media="(prefers-color-scheme: light)" />
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -14,13 +21,13 @@
                 <a onclick="togglemodal();"><ion-icon name="home-outline"></ion-icon></a>
             </li>
             <li style="--i:1;--clr:#fee800;">
-                <a href="#"><ion-icon name="person-outline"></ion-icon></a>
+                <a onclick="togglemodal();"><ion-icon name="person-outline"></ion-icon></a>
             </li>
             <li style="--i:2;--clr:#04fc43;">
-                <a href="#"><ion-icon name="settings-outline"></ion-icon></a>
+                <a onclick="togglemodal();"><ion-icon name="settings-outline"></ion-icon></a>
             </li>
             <li style="--i:3;--clr:#fe00f1;">
-                <a href="#"><ion-icon name="mail-outline"></ion-icon></a>
+                <a onclick="togglemodal();"><ion-icon name="mail-outline"></ion-icon></a>
             </li>
         </ul>
     </header>
@@ -86,9 +93,6 @@
     </footer>
 
     <div class="modal">
-        <!-- <div class="color"></div>
-        <div class="color"></div>
-        <div class="color"></div> -->
         <div class="box">
             <div class="square" style="--delay:0;"></div>
             <div class="square" style="--delay:1;"></div>
@@ -101,22 +105,6 @@
                 <p>This is content of modal window.</p>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet tenetur maxime eius id? Voluptatem consequatur suscipit earum, libero atque amet, esse voluptate consectetur dolore aspernatur, facilis reiciendis cupiditate beatae ipsum.</p>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab atque, dicta id eos, beatae, facere fuga quisquam minus sint quaerat explicabo! Possimus dolore necessitatibus consequatur aspernatur alias. Dignissimos, aspernatur labore.</p>
-                <!-- <div class="form">
-                    <h2>Login Form</h2>
-                    <form>
-                        <div class="inputBox">
-                            <input type="text" placeholder="Username">
-                        </div>
-                        <div class="inputBox">
-                            <input type="password" placeholder="Password">
-                        </div>
-                        <div class="inputBox">
-                            <input type="submit" value="Login">
-                        </div>
-                        <p class="forget">Forgot Password ? <a href="#">Click here</a></p>
-                        <p class="forget">Don't have an account ? <a href="#">Sign up</a></p>
-                    </form>
-                </div> -->
             </div>
         </div>
     </div>

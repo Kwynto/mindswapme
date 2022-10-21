@@ -1,248 +1,58 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+:root {
+    --body-background: #ffffff;
+    --menu-a-hover: #ffffff;
+    
+    --menu-toggle-bg: #ffffff;
+    --menu-toggle-color: #1e1e1e;
+    
+    --main-box-bg: #c4c4c4;
+    --main-box-hover: #ef4149;
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: #ffffff;
-}
+    --main-box-before: #e0e0e0;
+    --main-box-before-hover: #f75d64;
+    
+    --main-box-after: #d1d1d1;
+    --main-box-after-hover: #f14e55;
 
-header {
-    display: flex;
-    position: fixed;
-    right: 10px;
-    top: 10px;
-}
+    --footer-color: #e0e0e0;
 
-.blockmenu {
-    position: relative;
-    width: 280px;
-    height: 280px;
-    display: flex;
-    justify-content: right;
-    align-items: flex-end;
-    transform: rotate(-90deg);
-}
+    --modal-bg: #1e1e1e;
+    --modal-color-1: #ff359b;
+    --modal-color-2: #fffd87;
+    --modal-color-3: #00d2ff;
 
-.blockmenu li {
-    position: absolute;
-    left: 110px;
-    list-style: none;
-    transition: 0.5s;
-    transition-delay: calc(0.1s * var(--i));
-    transform-origin: 140px;
-    transform: rotate(0deg) translateX(110px);
-}
+    --modal-box-square-bshadow: rgba(0, 0, 0, 0.1);
+    --modal-box-square-border-base: rgba(255, 255, 255, 0.5);
+    --modal-box-square-border: rgba(255, 255, 255, 0.2);
+    --modal-box-square-bg: rgba(255, 255, 255, 0.1);
 
-.blockmenu.active li {
-    transform: rotate(calc(360deg / 11 * var(--i))) translateX(0px);
-}
-.blockmenu li a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60px;
-    height: 60px;
-    color: var(--clr);
-    border: 2px solid var(--clr);
-    border-radius: 50%;
-    font-size: 1.5em;
-    transform: rotate(calc(360deg / -11 * var(--i) + 90deg));
-    transition: 1s;
-}
-.blockmenu li a:hover {
-    transition: 0s;
-    background: var(--clr);
-    color: #ffffff;
-    box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr), 0 0 50px var(--clr);
-}
+    --modal-container-bg: rgba(255, 255, 255, 0.1);
+    --modal-container-bshadow: rgba(0, 0, 0, 0.1);
+    --modal-container-border-base: rgba(255, 255, 255, 0.5);
+    --modal-container-border: rgba(255, 255, 255, 0.2);
 
-.blockmenu .toggle {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    background: #ffffff;
-    border: 2px solid #1e1e1e;
-    border-radius: 50%;
-    color: #1e1e1e;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    z-index: 500;
-    font-size: 2em;
-    transition: transform 1.25s;
-}
+    --modal-h1-color: #ffffff;
+    --modal-h1-before-bg: #ffffff;
 
-.blockmenu.active .toggle {
-    transform: rotate(315deg);
-}
+    --modal-p-color: #ffffff;
 
-main {
-    position: relative;
-    top: -100px;
-    transform: skewY(-20deg);
-    animation: animate 5s linear infinite;
-}
-@keyframes animate {
-    0%
-    {
-        filter: hue-rotate(0deg);
-    }
-    100%
-    {
-        filter: hue-rotate(360deg);
-    }
-}
+    --modal-form-h2-color: #ffffff;
+    --modal-form-h2-before-bg: #ffffff;
 
-main section {
-    position: relative;
-    z-index: 2;
-}
-main section:nth-child(2) {
-    z-index: 1;
-    translate: -80px -80px;
-}
-main section:nth-child(3) {
-    z-index: 3;
-    translate: 80px 80px;
-}
+    --modal-form-input-bg: rgba(255, 255, 255, 0.2);
+    --modal-form-input-border-base: rgba(255, 255, 255, 0.5);
+    --modal-form-input-border: rgba(255, 255, 255, 0.2);
+    --modal-form-input-color: #000000;
+    --modal-form-input-bshadow: rgba(0, 0, 0, 0.05);
 
-main section .column {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    translate: calc(-90px * var(--x)) 0;
-}
-main section .column .box {
-    position: relative;
-    display: inline-block;
-    width: 75px;
-    height: 75px;
-    background: #c4c4c4;
-    z-index: calc(1 * var(--index));
-    transition: 1.5s;
-    cursor: pointer;
-    /* border-radius: 3px; */
-}
-main section .column .box:hover {
-    transition: 0s;
-    background: #ef4149;
-    filter: drop-shadow(0 0 30px #ef4149);
-}
+    --modal-form-input-ph-color: #ffffff;
 
-main section .column .box::before {
-    content: '';
-    position: absolute;
-    left: -60px;
-    width: 60px;
-    height: 100%;
-    background: #e0e0e0;
-    transform-origin: right;
-    transform: skewY(45deg);
-    transition: 1.5s;
-    /* border-radius: 3px; */
-}
-main section .column .box:hover::before {
-    transition: 0s;
-    background: #f75d64;
-}
+    --modal-form-input-sm-bg: #ffffff;
+    --modal-form-input-sm-color: #666666;
 
-main section .column .box::after {
-    content: '';
-    position: absolute;
-    top: -60px;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background: #d1d1d1;
-    transform-origin: bottom;
-    transform: skewX(45deg);
-    transition: 1.5s;
-    /* border-radius: 3px; */
-}
-main section .column .box:hover::after {
-    transition: 0s;
-    background: #f14e55;
-}
+    --modal-forget-color: #ffffff;
+    --modal-forget-a-color: #ffffff;
 
-footer {
-    display: flex;
-    position: fixed;
-    right: 10px;
-    bottom: 5px;
-    height: 30px;
-    justify-content: right;
-    align-items: center;
-    color: #e0e0e0;
-}
-
-footer p {
-    font-size: 18px;
-}
-
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    visibility: hidden;
-}
-
-.modal.show {
-    z-index: 1000;
-    visibility: visible;
-}
-
-.modal .modal-window {
-    position: relative;
-    z-index: 2;
-    width: 50%;
-    border-radius: 10px;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, .4);
-    background-color: #ffffff;
-    padding: 15px;
-}
-
-.modal .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #000000;
-    opacity: 0.7;
-    z-index: 0;
-    transition: 1.5s;
-}
-
-.modal .overlay:hover {
-    opacity: 0.1;
-    transition: 1.5s;
-}
-
-.btn-modal-close {
-    position: absolute;
-    top: 2px;
-    right: 2px;
-    border: none;
-    background: none;
-    color: #000000;
-    opacity: 0.6;
-    font-size: 2em;
-}
-
-.btn-modal-close:hover {
-    color: #ff0000;
-    opacity: 1;
+    --modal-btn-close-color: #000000;
+    --modal-btn-close-hover-color: #ff0000;
 }
