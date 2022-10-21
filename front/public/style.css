@@ -74,7 +74,7 @@ header {
     width: 60px;
     height: 60px;
     background: var(--menu-toggle-bg);
-    border: 2px solid var(--menu-toggle-color);;
+    border: 2px solid var(--menu-toggle-color);
     border-radius: 50%;
     color: var(--menu-toggle-color);
     display: flex;
