@@ -6,10 +6,7 @@
     <script>
         if (window.matchMedia('(prefers-color-scheme: light)').media === 'not all') {
             document.documentElement.style.display = 'none';
-            document.head.insertAdjacentHTML(
-                'beforeend',
-                '<link rel="stylesheet" href="/dark.css" onload="document.documentElement.style.display = \'\'">',
-            );
+            document.head.insertAdjacentHTML('beforeend', '<link rel="stylesheet" href="/dark.css" onload="document.documentElement.style.display = \'\'">');
         }
     </script>
     <link rel="stylesheet" href="dark.css" media="(prefers-color-scheme: dark)" />
