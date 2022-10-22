@@ -19,6 +19,8 @@ body {
     background: var(--body-background);
 }
 
+/* Menu */
+
 header {
     display: flex;
     position: fixed;
@@ -89,6 +91,8 @@ header {
 .blockmenu.active .toggle {
     transform: rotate(315deg);
 }
+
+/* Content */
 
 main {
     position: relative;
@@ -174,18 +178,32 @@ main section .column .box:hover::after {
     background: var(--main-box-after-hover);
 }
 
+/* Footer */
+
 footer {
     display: flex;
     position: fixed;
-    right: 10px;
+    flex-direction: row;
     bottom: 5px;
-    height: 30px;
-    justify-content: right;
-    align-items: center;
+    left: 5px;
+    right: 5px;
     color: var(--footer-color);
 }
 
-footer p {
+footer .counters {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+}
+
+footer .copyright {
+    position: absolute;
+    right: 0px;
+    height: 30px;
+    bottom: 0px;
+}
+
+footer .copyright p {
     font-size: 18px;
 }
 
