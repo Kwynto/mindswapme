@@ -437,3 +437,67 @@ footer p {
     color: var(--modal-btn-close-hover-color);
     opacity: 1;
 }
+
+/* Buttons */
+
+.button {
+    margin: 1em;
+    border-radius: 10px;
+    padding: 0.5em;
+    width: 6.5em;
+    height: 2.5em;
+    font-size: 1em;
+    color: white;
+    border: none;
+}
+
+.btn-red {
+    background: linear-gradient(-45deg, red, orange, yellow);
+    box-shadow: 5px 5px 5px #121212, -5px -5px 5px #323232;
+    transition: 0.1s;
+}
+.btn-red:hover {
+    background: linear-gradient(-135deg, yellow, orange, red);
+    box-shadow: 0 5px 30px yellow, 0 -5px 30px red;
+}
+
+.btn-green {
+    background: linear-gradient(-45deg, #0aa98e, #32ff54);
+    box-shadow: 5px 5px 5px #121212, -5px -5px 5px #323232;
+    transition: 0.1s;
+}
+.btn-green:hover {
+    background: linear-gradient(45deg, #0aa98e, #32ff54);
+    box-shadow: 0 5px 30px #0aa98e, 0 -5px 30px #32ff54;
+}
+
+.btn-blue {
+    background: linear-gradient(-45deg, #4354c9, #8484fa);
+    box-shadow: 5px 5px 5px #121212, -5px -5px 5px #323232;
+    transition: 0.1s;
+}
+.btn-blue:hover {
+    background: linear-gradient(45deg, #4354c9, #8484fa);
+    box-shadow: 0 5px 30px #3454c9, 0 -5px 30px #3554c9;
+}
+
+.btn-light {
+    color: #232332;
+    background: linear-gradient(-45deg, #cdd0e7, #f9f9fa);
+    box-shadow: 5px 5px 5px #121212, -5px -5px 5px #323232;
+    transition: 0.1s;
+}
+.btn-light:hover {
+    background: linear-gradient(45deg, #cdd0e7, #f9f9fa);
+    box-shadow: 0 5px 30px #fafafa, 0 -5px 30px #fafafa;
+}
+
+.btn-dark {
+    background: linear-gradient(-45deg, #181a22, #3c3c3d);
+    box-shadow: 5px 5px 5px #121212, -5px -5px 5px #323232;
+    transition: 0.1s;
+}
+.btn-dark:hover {
+    background: linear-gradient(45deg, #181a22, #3c3c3d);
+    box-shadow: 0 5px 30px #050505, 0 -5px 30px #050505;
+}
