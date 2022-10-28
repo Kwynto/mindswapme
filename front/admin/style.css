@@ -1,0 +1,741 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+/* Menu block */
+
+.navigation {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: #003147;
+    transition: 0.5s;
+    overflow: hidden;
+}
+.navigation.active {
+    width: 60px;
+}
+
+.navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navigation ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+}
+
+.navigation ul li:hover {
+    background: #03a9f4;
+}
+
+.navigation ul li:nth-child(1) {
+    margin-bottom: 20px;
+}
+.navigation ul li:nth-child(1):hover {
+    background: transparent;
+}
+
+.navigation ul li a {
+    position: relative;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.navigation ul li a .icon .fa {
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.navigation ul li a .title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+
+/* Main block */
+
+.main {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: #f5f5f5;
+    transition: 0.5s;
+}
+.main.active {
+    width: calc(100% - 60px);
+    left: 60px;
+}
+
+/* TopBar */
+
+.main .topbar {
+    width: 100%;
+    background: #ffffff;
+    height: 60px;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.toggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    font-size: 3em;
+    text-align: center;
+}
+.toggle::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 60px;
+    font-size: 24px;
+    text-align: center;
+    color: #111111;
+}
+
+.search {
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+
+}
+
+.search label {
+    position: relative;
+    width: 100%;
+}
+
+.search label input {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 40px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.search label ion-icon {
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    font-size: 1.5em;
+}
+
+.user {
+    position: relative;
+    min-width: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.user img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* CardBox */
+
+.cardBox {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 20px;
+}
+
+.cardBox .card {
+    position: relative;
+    background: #ffffff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.cardBox .card .numbers {
+    position: relative;
+    font-size: 2em;
+    font-weight: 500;
+}
+
+.cardBox .card .cardName {
+    color: #999999;
+}
+
+.cardBox .card .iconBox {
+    font-size: 2.5em;
+    color: #03a9f4;
+}
+
+.details {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    padding-top: 0;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 2fr 1fr;
+}
+
+.details2 {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    padding-top: 0;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr;
+}
+
+.details .recentOrders {
+    position: relative;
+    min-height: 530px;
+    background: #ffffff;
+    padding: 20px;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cardHeader h2 {
+    font-weight: 600;
+}
+
+.btn {
+    position: relative;
+    padding: 5px 10px;
+    background: #03a9f4;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.details table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.details table thead td {
+    font-weight: 600;
+}
+
+.details .recentOrders table tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.details .recentOrders table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.details .recentOrders table tbody tr:hover {
+    background: #03a9f4;
+    color: #ffffff;
+}
+
+.details .recentOrders table tr td {
+    padding: 9px 5px;
+}
+
+.details .recentOrders table thead tr td:last-child,
+.details .recentOrders table tbody tr td:last-child {
+    text-align: right;
+}
+
+.details .recentOrders table thead tr td:nth-child(2),
+.details .recentOrders table tbody tr td:nth-child(2) {
+    text-align: right;
+    padding-right: 20px;
+}
+
+.details .recentOrders table thead tr td:nth-child(3),
+.details .recentOrders table tbody tr td:nth-child(3) {
+    text-align: center;
+}
+
+.status {
+    position: relative;
+    padding: 2px 4px;
+    background: #0c0303;
+    color: #ffffff;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.delivered {
+    background: #8de02c;
+}
+.pending {
+    background: #f9ca3f;
+}
+.return {
+    background: #ff0000;
+}
+.inprogress {
+    background: #1795ce;
+}
+
+.ok {
+    background: #8de02c;
+}
+.error {
+    background: #ff0000;
+}
+.warning {
+    background: #f9ca3f;
+}
+.danger {
+    background: #d40e71;
+}
+.process {
+    background: #1795ce;
+}
+
+.details .recentCustomers {
+    position: relative;
+    min-width: 530px;
+    background: #ffffff;
+    padding: 20px;
+}
+
+.details .recentCustomers table tbody tr td:first-child {
+    width: 60px;
+}
+
+.details .recentCustomers .imgBx {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.details .recentCustomers .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.details .recentCustomers table tr td h4 span {
+    font-size: 14px;
+    color: #999999;
+}
+
+.details .recentCustomers table tr:hover,
+.details .recentCustomers table tr:hover td h4 span {
+    background: #03a9f4;
+    color: #ffffff;
+}
+
+.details .recentCustomers table tr td {
+    padding: 7px 10px;
+    text-align: left;
+}
+
+.details .recentCustomers table tr td h4 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2em;
+}
+
+.details2 .recentOther {
+    position: relative;
+    width: 100%;
+    background: #ffffff;
+    padding: 20px;
+}
+
+.details2 table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.details2 table thead td {
+    font-weight: 600;
+}
+
+.details2 .recentOther table tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.details2 .recentOther table tbody tr td:first-child {
+    width: 80px;
+}
+
+.details2 .recentOther table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.details2 .recentOther table tbody tr:hover {
+    background: #03a9f4;
+    color: #ffffff;
+}
+
+.details2 .recentOther table tr td {
+    padding: 9px 5px;
+    text-align: center;
+}
+
+.details2 .recentOther table thead tr td:last-child,
+.details2 .recentOther table tbody tr td:last-child {
+    text-align: right;
+}
+
+.details2 .recentOther table thead tr td:nth-child(2),
+.details2 .recentOther table tbody tr td:nth-child(2) {
+    text-align: left;
+    padding-right: 20px;
+}
+
+/* Responsive */
+
+@media (max-width: 992px) {
+    .navigation {
+        left: -300px;
+    }
+    .navigation.active {
+        left: 0;
+        width: 300px;
+    }
+    .main {
+        width: 100%;
+        left: 0;
+    }
+    .main.active {
+        width: calc(100% - 300px);
+        left: 300px;
+    }
+    .cardBox {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .details {
+        grid-template-columns: repeat(1,1fr);
+    }
+    .cardHeader h2 {
+        font-weight: 600;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cardBox {
+        grid-template-columns: repeat(1,1fr);
+    }
+    .details .recentOrders {
+        overflow-x: auto;
+    }
+    .details .recentOrders table {
+        width: 600px;
+    }
+    .navigation {
+        width: 100%;
+        left: -100%;
+        z-index: 100;
+    }
+    .navigation.active {
+        width: 100%;
+        left: 0;
+    }
+    .toggle.active {
+        position: absolute;
+        z-index: 110;
+        right: 0;
+        left: initial;
+    }
+    .toggle.active ion-icon {
+        color: #ffffff;
+    }
+    .main,
+    .main.active {
+        width: 100%;
+        left: 0;
+    }
+}
+
+/* Modal */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: linear-gradient(to bottom, #1e1e1e, #424242); */
+    background: #1e1e1e;;
+    opacity: 0.95;
+    visibility: hidden;
+}
+
+.modal.show {
+    z-index: 10;
+    visibility: visible;
+}
+
+.modal .box {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal .modalcontainer {
+    position: relative;
+    width: 50%;
+    background: rgba(255, 255, 255, 0.65);
+    border-radius: 10px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modal .modalcontainer h1 {
+    position: relative;
+    padding-top: 15px;
+    padding-left: 40px;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.modal .modalcontainer h1::before {
+    content: '';
+    position: absolute;
+    left: 40px;
+    bottom: 0px;
+    width: calc(100% - 80px);
+    height: 2px;
+    background: #ffffff;
+}
+
+.modal .modalcontainer p {
+    position: relative;
+    padding-left: 40px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    color: #ffffff;
+    top: 10px;
+}
+
+.modal .form {
+    position: relative;
+    width: 100%;
+    /* height: 100%; */
+    padding: 40px;
+}
+
+.modal .form h2 {
+    position: relative;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+.modal .form h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 80px;
+    height: 4px;
+    background: #ffffff;
+}
+
+.modal .form .inputBox {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.modal .form .inputBox input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #000000;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.modal .form .inputBox input::placeholder {
+    color: #ffffff;
+}
+
+.modal .form .inputBox input[type="submit"] {
+    background: #ffffff;
+    color: #666666;
+    max-width: 100px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.modal .forget {
+    margin-top: 5px;
+    color: #ffffff;
+}
+
+.modal .forget a {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.btn-modal-close {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    border: none;
+    background: none;
+    color: #000000;
+    opacity: 0.6;
+    font-size: 2em;
+    z-index: 5;
+}
+
+.btn-modal-close:hover {
+    color: #ff0000;
+    opacity: 1;
+}
+
+/* Buttons */
+
+.button {
+    margin: 1em;
+    border-radius: 10px;
+    padding: 0.5em;
+    width: 6.5em;
+    height: 2.5em;
+    font-size: 1em;
+    color: white;
+    border: none;
+}
+
+.btn-red {
+    background: linear-gradient(-45deg, red, orange, yellow);
+    box-shadow: 5px 5px 5px #121212, -5px -5px 5px #323232;
+    transition: 0.1s;
+}
+.btn-red:hover {
+    background: linear-gradient(-135deg, yellow, orange, red);
+    box-shadow: 0 5px 30px yellow, 0 -5px 30px red;
+}
+
+.btn-green {
+    background: linear-gradient(-45deg, #0aa98e, #32ff54);
+    box-shadow: 5px 5px 5px #121212, -5px -5px 5px #323232;
+    transition: 0.1s;
+}
+.btn-green:hover {
+    background: linear-gradient(45deg, #0aa98e, #32ff54);
+    box-shadow: 0 5px 30px #0aa98e, 0 -5px 30px #32ff54;
+}
+
+.btn-blue {
+    background: linear-gradient(-45deg, #4354c9, #8484fa);
+    box-shadow: 5px 5px 5px #121212, -5px -5px 5px #323232;
+    transition: 0.1s;
+}
+.btn-blue:hover {
+    background: linear-gradient(45deg, #4354c9, #8484fa);
+    box-shadow: 0 5px 30px #3454c9, 0 -5px 30px #3554c9;
+}
+
+.btn-light {
+    color: #232332;
+    background: linear-gradient(-45deg, #cdd0e7, #f9f9fa);
+    box-shadow: 5px 5px 5px #121212, -5px -5px 5px #323232;
+    transition: 0.1s;
+}
+.btn-light:hover {
+    background: linear-gradient(45deg, #cdd0e7, #f9f9fa);
+    box-shadow: 0 5px 30px #fafafa, 0 -5px 30px #fafafa;
+}
+
+.btn-dark {
+    background: linear-gradient(-45deg, #181a22, #3c3c3d);
+    box-shadow: 5px 5px 5px #121212, -5px -5px 5px #323232;
+    transition: 0.1s;
+}
+.btn-dark:hover {
+    background: linear-gradient(45deg, #181a22, #3c3c3d);
+    box-shadow: 0 5px 30px #050505, 0 -5px 30px #050505;
+}

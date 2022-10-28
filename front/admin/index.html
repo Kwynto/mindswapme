@@ -2,10 +2,388 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Admin Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a>
+                        <span class="icon">
+                            <ion-icon name="cube"></ion-icon>
+                        </span>
+                        <span class="title"><h2>Mindswap Me</h2></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="home"></ion-icon></span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="link"></ion-icon></span>
+                        <span class="title">Links</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="color-filter"></ion-icon></span>
+                        <span class="title">Minds</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="documents"></ion-icon></span>
+                        <span class="title">History</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="chatbox-ellipses"></ion-icon></span>
+                        <span class="title">Chatroom</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="log-out"></ion-icon></span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle" onclick="toggleMenu();">
+                    <ion-icon name="menu"></ion-icon>
+                </div>
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search"></ion-icon>
+                    </label>
+                </div>
+                <div class="user">
+                    <img src="user.jpeg">
+                </div>
+            </div>
+
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <div class="numbers">1,042</div>
+                        <div class="cardName">New links</div>
+                    </div>
+                    <div class="iconBox">
+                        <ion-icon name="link"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">282</div>
+                        <div class="cardName">New minds</div>
+                    </div>
+                    <div class="iconBox">
+                        <ion-icon name="color-filter"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">3563</div>
+                        <div class="cardName">Visits per day</div>
+                    </div>
+                    <div class="iconBox">
+                        <ion-icon name="people"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">6,042</div>
+                        <div class="cardName">Outputs per day</div>
+                    </div>
+                    <div class="iconBox">
+                        <ion-icon name="dice"></ion-icon>
+                    </div>
+                </div>
+            </div>
+
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>Recent Orders</h2>
+                        <a class="btn" onclick="togglemodal();">View All</a>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Name</td>
+                                <td>Price</td>
+                                <td>Payment</td>
+                                <td>Status</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Star Refrigerator</td>
+                                <td>$1200</td>
+                                <td>Paid</td>
+                                <td>
+                                    <span class="status delivered">Delivered</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Window Cooler</td>
+                                <td>$110</td>
+                                <td>Due</td>
+                                <td>
+                                    <span class="status pending">Pending</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Speakers</td>
+                                <td>$620</td>
+                                <td>Paid</td>
+                                <td>
+                                    <span class="status return">Return</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>HP Laptop</td>
+                                <td>$6000</td>
+                                <td>Due</td>
+                                <td>
+                                    <span class="status inprogress">In Progress</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Star Refrigerator</td>
+                                <td>$1200</td>
+                                <td>Paid</td>
+                                <td>
+                                    <span class="status delivered">Delivered</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Window Cooler</td>
+                                <td>$110</td>
+                                <td>Due</td>
+                                <td>
+                                    <span class="status pending">Pending</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Speakers</td>
+                                <td>$620</td>
+                                <td>Paid</td>
+                                <td>
+                                    <span class="status return">Return</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>HP Laptop</td>
+                                <td>$6000</td>
+                                <td>Due</td>
+                                <td>
+                                    <span class="status inprogress">In Progress</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Apple Watch</td>
+                                <td>$680</td>
+                                <td>Paid</td>
+                                <td>
+                                    <span class="status delivered">Delivered</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="recentCustomers">
+                    <div class="cardHeader">
+                        <h2>Recent Customers</h2>
+                    </div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="imgBx"><img src="img1.jpeg"></div>
+                                </td>
+                                <td>
+                                    <h4>David<br><span>Italy</span></h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="imgBx"><img src="img2.jpeg"></div>
+                                </td>
+                                <td>
+                                    <h4>Muhammad<br><span>India</span></h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="imgBx"><img src="img3.jpeg"></div>
+                                </td>
+                                <td>
+                                    <h4>Amelia<br><span>France</span></h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="imgBx"><img src="img4.jpeg"></div>
+                                </td>
+                                <td>
+                                    <h4>Olivia<br><span>USA</span></h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="imgBx"><img src="img5.jpeg"></div>
+                                </td>
+                                <td>
+                                    <h4>Amit<br><span>Japan</span></h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="imgBx"><img src="img6.jpeg"></div>
+                                </td>
+                                <td>
+                                    <h4>Ashraf<br><span>India</span></h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="imgBx"><img src="img7.jpeg"></div>
+                                </td>
+                                <td>
+                                    <h4>Diana<br><span>Malaysia</span></h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="imgBx"><img src="img8.jpeg"></div>
+                                </td>
+                                <td>
+                                    <h4>Amit<br><span>India</span></h4>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <div class="details2">
+                <div class="recentOther">
+                    <div class="cardHeader">
+                        <h2>Recent Other</h2>
+                        <a class="btn" onclick="togglemodal();">View All</a>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>#</td>
+                                <td>Name</td>
+                                <td>Price</td>
+                                <td>Numbers</td>
+                                <td>Sum</td>
+                                <td>Status</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Name 1</td>
+                                <td>100</td>
+                                <td>1</td>
+                                <td>100</td>
+                                <td><span class="status ok">OK</span></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Name 2</td>
+                                <td>200</td>
+                                <td>2</td>
+                                <td>400</td>
+                                <td><span class="status error">Error</span></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Name 3</td>
+                                <td>300</td>
+                                <td>3</td>
+                                <td>900</td>
+                                <td><span class="status warning">Warning</span></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Name 4</td>
+                                <td>400</td>
+                                <td>4</td>
+                                <td>1600</td>
+                                <td><span class="status danger">Danger</span></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Name 5</td>
+                                <td>500</td>
+                                <td>5</td>
+                                <td>2500</td>
+                                <td><span class="status process">Process</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal">
+        <div class="box">
+            <div class="modalcontainer">
+                <div class="btn-modal-close" onclick="togglemodal();"><ion-icon name="close-circle-outline"></ion-icon></div>
+                <h1>Title window.</h1>
+                <p>This is content of modal window.</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet tenetur maxime eius id? Voluptatem consequatur suscipit earum, libero atque amet, esse voluptate consectetur dolore aspernatur, facilis reiciendis cupiditate beatae ipsum.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab atque, dicta id eos, beatae, facere fuga quisquam minus sint quaerat explicabo! Possimus dolore necessitatibus consequatur aspernatur alias. Dignissimos, aspernatur labore.</p>
+                <p>
+                    <button class="button btn-red">Cancel</button>
+                    <button class="button btn-green">Save-Ok</button>
+                    <button class="button btn-blue">Blue Btn</button>
+                    <button class="button btn-light">Btn Light</button>
+                    <button class="button btn-dark">Btn Dark</button>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        function toggleMenu(){
+            let toggle = document.querySelector('.toggle');
+            let navigation = document.querySelector('.navigation');
+            let main = document.querySelector('.main');
+            toggle.classList.toggle('active');
+            navigation.classList.toggle('active');
+            main.classList.toggle('active');
+        }
+
+        function togglemodal() {
+            let modal = document.querySelector('.modal');
+            modal.classList.toggle('show')
+        }
+    </script>
 </body>
 </html>
