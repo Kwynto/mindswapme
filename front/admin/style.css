@@ -546,7 +546,7 @@ body {
 .modal .modalcontainer {
     position: relative;
     width: 50%;
-    background: rgba(255, 255, 255, 0.65);
+    background: rgba(255, 255, 255, 1);
     border-radius: 10px;
     display: block;
     justify-content: center;
@@ -562,7 +562,7 @@ body {
     position: relative;
     padding-top: 15px;
     padding-left: 40px;
-    color: #ffffff;
+    color: #050505;
     font-size: 30px;
     font-weight: 600;
     letter-spacing: 1px;
@@ -575,7 +575,7 @@ body {
     bottom: 0px;
     width: calc(100% - 80px);
     height: 2px;
-    background: #ffffff;
+    background: #050505;
 }
 
 .modal .modalcontainer p {
@@ -583,7 +583,7 @@ body {
     padding-left: 40px;
     padding-right: 20px;
     padding-bottom: 20px;
-    color: #ffffff;
+    color: #050505;
     top: 10px;
 }
 
@@ -596,7 +596,7 @@ body {
 
 .modal .form h2 {
     position: relative;
-    color: #ffffff;
+    color: #050505;
     font-size: 24px;
     font-weight: 600;
     letter-spacing: 1px;
@@ -610,7 +610,7 @@ body {
     bottom: -10px;
     width: 80px;
     height: 4px;
-    background: #ffffff;
+    background: #050505;
 }
 
 .modal .form .inputBox {
