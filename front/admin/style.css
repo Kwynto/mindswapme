@@ -256,11 +256,17 @@ body {
 .btn {
     position: relative;
     padding: 5px 10px;
-    background: #03a9f4;
+    background: #23b9ff;
     color: #ffffff;
     text-decoration: none;
     border-radius: 6px;
     cursor: pointer;
+    border: 1px solid #fafafa;
+}
+
+.btn.manage-link {
+    padding-top: 10px;
+    font-size: 1.2em;
 }
 
 .details table {
