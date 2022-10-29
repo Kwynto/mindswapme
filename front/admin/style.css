@@ -396,52 +396,52 @@ body {
     line-height: 1.2em;
 }
 
-.details2 .recentOther {
+.details-content .contentOther {
     position: relative;
     width: 100%;
     background: #ffffff;
     padding: 20px;
 }
 
-.details2 table {
+.details-content table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
 }
 
-.details2 table thead td {
+.details-content table thead td {
     font-weight: 600;
 }
 
-.details2 .recentOther table tr {
+.details-content .contentOther table tr {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.details2 .recentOther table tbody tr td:first-child {
+.details-content .contentOther table tbody tr td:first-child {
     width: 80px;
 }
 
-.details2 .recentOther table tbody tr:last-child {
+.details-content .contentOther table tbody tr:last-child {
     border-bottom: none;
 }
 
-.details2 .recentOther table tbody tr:hover {
+.details-content .contentOther table tbody tr:hover {
     background: #03a9f4;
     color: #ffffff;
 }
 
-.details2 .recentOther table tr td {
+.details-content .contentOther table tr td {
     padding: 9px 5px;
     text-align: center;
 }
 
-.details2 .recentOther table thead tr td:last-child,
-.details2 .recentOther table tbody tr td:last-child {
+.details-content .contentOther table thead tr td:last-child,
+.details-content .contentOther table tbody tr td:last-child {
     text-align: right;
 }
 
-.details2 .recentOther table thead tr td:nth-child(2),
-.details2 .recentOther table tbody tr td:nth-child(2) {
+.details-content .contentOther table thead tr td:nth-child(2),
+.details-content .contentOther table tbody tr td:nth-child(2) {
     text-align: left;
     padding-right: 20px;
 }
@@ -525,7 +525,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background: linear-gradient(to bottom, #1e1e1e, #424242); */
     background: #1e1e1e;;
     opacity: 0.95;
     visibility: hidden;
