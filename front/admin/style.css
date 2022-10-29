@@ -256,11 +256,17 @@ body {
 .btn {
     position: relative;
     padding: 5px 10px;
-    background: #03a9f4;
+    background: #23b9ff;
     color: #ffffff;
     text-decoration: none;
     border-radius: 6px;
     cursor: pointer;
+    border: 1px solid #fafafa;
+}
+
+.btn.manage-link {
+    padding-top: 10px;
+    font-size: 1.2em;
 }
 
 .details table {
@@ -396,52 +402,52 @@ body {
     line-height: 1.2em;
 }
 
-.details2 .recentOther {
+.details-content .contentOther {
     position: relative;
     width: 100%;
     background: #ffffff;
     padding: 20px;
 }
 
-.details2 table {
+.details-content table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
 }
 
-.details2 table thead td {
+.details-content table thead td {
     font-weight: 600;
 }
 
-.details2 .recentOther table tr {
+.details-content .contentOther table tr {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.details2 .recentOther table tbody tr td:first-child {
+.details-content .contentOther table tbody tr td:first-child {
     width: 80px;
 }
 
-.details2 .recentOther table tbody tr:last-child {
+.details-content .contentOther table tbody tr:last-child {
     border-bottom: none;
 }
 
-.details2 .recentOther table tbody tr:hover {
+.details-content .contentOther table tbody tr:hover {
     background: #03a9f4;
     color: #ffffff;
 }
 
-.details2 .recentOther table tr td {
+.details-content .contentOther table tr td {
     padding: 9px 5px;
     text-align: center;
 }
 
-.details2 .recentOther table thead tr td:last-child,
-.details2 .recentOther table tbody tr td:last-child {
+.details-content .contentOther table thead tr td:last-child,
+.details-content .contentOther table tbody tr td:last-child {
     text-align: right;
 }
 
-.details2 .recentOther table thead tr td:nth-child(2),
-.details2 .recentOther table tbody tr td:nth-child(2) {
+.details-content .contentOther table thead tr td:nth-child(2),
+.details-content .contentOther table tbody tr td:nth-child(2) {
     text-align: left;
     padding-right: 20px;
 }
@@ -525,7 +531,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background: linear-gradient(to bottom, #1e1e1e, #424242); */
     background: #1e1e1e;;
     opacity: 0.95;
     visibility: hidden;
@@ -547,7 +552,7 @@ body {
 .modal .modalcontainer {
     position: relative;
     width: 50%;
-    background: rgba(255, 255, 255, 0.65);
+    background: rgba(255, 255, 255, 1);
     border-radius: 10px;
     display: block;
     justify-content: center;
@@ -563,7 +568,7 @@ body {
     position: relative;
     padding-top: 15px;
     padding-left: 40px;
-    color: #ffffff;
+    color: #050505;
     font-size: 30px;
     font-weight: 600;
     letter-spacing: 1px;
@@ -576,7 +581,7 @@ body {
     bottom: 0px;
     width: calc(100% - 80px);
     height: 2px;
-    background: #ffffff;
+    background: #050505;
 }
 
 .modal .modalcontainer p {
@@ -584,7 +589,7 @@ body {
     padding-left: 40px;
     padding-right: 20px;
     padding-bottom: 20px;
-    color: #ffffff;
+    color: #050505;
     top: 10px;
 }
 
@@ -597,7 +602,7 @@ body {
 
 .modal .form h2 {
     position: relative;
-    color: #ffffff;
+    color: #050505;
     font-size: 24px;
     font-weight: 600;
     letter-spacing: 1px;
@@ -611,7 +616,7 @@ body {
     bottom: -10px;
     width: 80px;
     height: 4px;
-    background: #ffffff;
+    background: #050505;
 }
 
 .modal .form .inputBox {

@@ -58,6 +58,7 @@
         </div>
 
         <div class="main">
+
             <div class="topbar">
                 <div class="toggle" onclick="toggleMenu();">
                     <ion-icon name="menu"></ion-icon>
@@ -115,231 +116,87 @@
                 </div>
             </div>
 
-            <div class="details">
-                <div class="recentOrders">
+            <div class="details-content">
+                <div class="contentOther">
                     <div class="cardHeader">
-                        <h2>Recent Orders</h2>
+                        <h2>Content Other</h2>
                         <a class="btn" onclick="togglemodal();">View All</a>
                     </div>
                     <table>
                         <thead>
                             <tr>
-                                <td>Name</td>
-                                <td>Price</td>
-                                <td>Payment</td>
+                                <td>ID</td>
+                                <td>Short name</td>
+                                <td>Link</td>
+                                <td>Keys</td>
+                                <td>Score</td>
                                 <td>Status</td>
+                                <td>Manage</td>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Star Refrigerator</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>
-                                    <span class="status delivered">Delivered</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Window Cooler</td>
-                                <td>$110</td>
-                                <td>Due</td>
-                                <td>
-                                    <span class="status pending">Pending</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Speakers</td>
-                                <td>$620</td>
-                                <td>Paid</td>
-                                <td>
-                                    <span class="status return">Return</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>HP Laptop</td>
-                                <td>$6000</td>
-                                <td>Due</td>
-                                <td>
-                                    <span class="status inprogress">In Progress</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Star Refrigerator</td>
-                                <td>$1200</td>
-                                <td>Paid</td>
-                                <td>
-                                    <span class="status delivered">Delivered</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Window Cooler</td>
-                                <td>$110</td>
-                                <td>Due</td>
-                                <td>
-                                    <span class="status pending">Pending</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Speakers</td>
-                                <td>$620</td>
-                                <td>Paid</td>
-                                <td>
-                                    <span class="status return">Return</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>HP Laptop</td>
-                                <td>$6000</td>
-                                <td>Due</td>
-                                <td>
-                                    <span class="status inprogress">In Progress</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Apple Watch</td>
-                                <td>$680</td>
-                                <td>Paid</td>
-                                <td>
-                                    <span class="status delivered">Delivered</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="recentCustomers">
-                    <div class="cardHeader">
-                        <h2>Recent Customers</h2>
-                    </div>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <div class="imgBx"><img src="img1.jpeg"></div>
-                                </td>
-                                <td>
-                                    <h4>David<br><span>Italy</span></h4>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="imgBx"><img src="img2.jpeg"></div>
-                                </td>
-                                <td>
-                                    <h4>Muhammad<br><span>India</span></h4>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="imgBx"><img src="img3.jpeg"></div>
-                                </td>
-                                <td>
-                                    <h4>Amelia<br><span>France</span></h4>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="imgBx"><img src="img4.jpeg"></div>
-                                </td>
-                                <td>
-                                    <h4>Olivia<br><span>USA</span></h4>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="imgBx"><img src="img5.jpeg"></div>
-                                </td>
-                                <td>
-                                    <h4>Amit<br><span>Japan</span></h4>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="imgBx"><img src="img6.jpeg"></div>
-                                </td>
-                                <td>
-                                    <h4>Ashraf<br><span>India</span></h4>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="imgBx"><img src="img7.jpeg"></div>
-                                </td>
-                                <td>
-                                    <h4>Diana<br><span>Malaysia</span></h4>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="imgBx"><img src="img8.jpeg"></div>
-                                </td>
-                                <td>
-                                    <h4>Amit<br><span>India</span></h4>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-            </div>
-
-            <div class="details2">
-                <div class="recentOther">
-                    <div class="cardHeader">
-                        <h2>Recent Other</h2>
-                        <a class="btn" onclick="togglemodal();">View All</a>
-                    </div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <td>#</td>
-                                <td>Name</td>
-                                <td>Price</td>
-                                <td>Numbers</td>
-                                <td>Sum</td>
-                                <td>Status</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Name 1</td>
+                                <td>5</td>
+                                <td>sU4ng9adsjd49ssD</td>
+                                <td><a href="https://translate.yandex.ru/" target="_blank">https://translate.yandex.ru/</a></td>
+                                <td></td>
                                 <td>100</td>
-                                <td>1</td>
-                                <td>100</td>
-                                <td><span class="status ok">OK</span></td>
+                                <td><span class="status warning">New link</span></td>
+                                <td>
+                                    <a href="#" class="btn manage-link">
+                                        <ion-icon name="apps"></ion-icon>
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
-                                <td>2</td>
-                                <td>Name 2</td>
-                                <td>200</td>
-                                <td>2</td>
+                                <td>4</td>
+                                <td>k59sntOjsU9J-s9l</td>
+                                <td><a href="https://github.com/" target="_blank">https://github.com/</a></td>
+                                <td></td>
                                 <td>400</td>
-                                <td><span class="status error">Error</span></td>
+                                <td>
+                                    <span class="status ok">OK</span><br>
+                                    <span class="status process">Link in processing</span>
+                                </td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td>3</td>
-                                <td>Name 3</td>
-                                <td>300</td>
-                                <td>3</td>
+                                <td>3l4U4lsgUla3nLsD</td>
+                                <td><a href="https://www.youtube.com/" target="_blank">https://www.youtube.com/</a></td>
+                                <td></td>
                                 <td>900</td>
-                                <td><span class="status warning">Warning</span></td>
+                                <td>
+                                    <span class="status warning">New link</span><br>
+                                    <span class="status process">Link in processing</span>
+                                </td>
+                                <td></td>
                             </tr>
                             <tr>
-                                <td>4</td>
-                                <td>Name 4</td>
-                                <td>400</td>
-                                <td>4</td>
+                                <td>2</td>
+                                <td>NsueLSewo4oznlla</td>
+                                <td><a href="https://boosty.to/" target="_blank">https://boosty.to/</a></td>
+                                <td></td>
                                 <td>1600</td>
-                                <td><span class="status danger">Danger</span></td>
+                                <td><span class="status danger">Blocked link</span></td>
+                                <td>
+                                    <a href="#" class="btn manage-link">
+                                        <ion-icon name="apps"></ion-icon>
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
-                                <td>5</td>
-                                <td>Name 5</td>
-                                <td>500</td>
-                                <td>5</td>
+                                <td>1</td>
+                                <td>d8Ksf3Ka&3nsaja3</td>
+                                <td><a href="http://newprogress.xyz/" target="_blank">http://newprogress.xyz/</a></td>
+                                <td></td>
                                 <td>2500</td>
-                                <td><span class="status process">Process</span></td>
+                                <td><span class="status ok">OK</span></td>
+                                <td>
+                                    <a href="#" class="btn manage-link">
+                                        <ion-icon name="apps"></ion-icon>
+                                    </a>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
