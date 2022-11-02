@@ -6,55 +6,12 @@ import (
 	"fmt"
 	"net/http"
 	"runtime/debug"
-	"strconv"
-	"strings"
 )
 
 func (app *application) getMd5(text string) string {
 	h := md5.New()
 	h.Write([]byte(text))
 	return hex.EncodeToString(h.Sum(nil))
-}
-
-func (app *application) convertProduct(uri string) string {
-	res := strings.Trim(uri, "/")
-	res = strings.ToUpper(res)
-	return res
-}
-
-func (app *application) addProduct(text string, plus string) string {
-	var newText string = ""
-	var newProd string = ""
-	var isIt bool = false
-
-	if text == "" {
-		newText = fmt.Sprintf("%s=%d ", plus, 1)
-		return newText
-	}
-
-	splitTest := strings.Split(text, " ")
-	for _, val := range splitTest {
-		if val != "" {
-			splitVal := strings.Split(val, "=")
-			prodName := splitVal[0]
-			prodCount, _ := strconv.Atoi(splitVal[1])
-			if prodName == plus {
-				isIt = true
-				prodCount += 1
-				newProd = fmt.Sprintf("%s=%d", prodName, prodCount)
-				newText = fmt.Sprintf("%s%s ", newText, newProd)
-			} else {
-				newText = fmt.Sprintf("%s%s ", newText, val)
-			}
-		}
-	}
-
-	if !isIt {
-		newProd = fmt.Sprintf("%s=%d", plus, 1)
-		newText = fmt.Sprintf("%s%s ", newText, newProd)
-	}
-
-	return newText
 }
 
 func (app *application) serverError(w http.ResponseWriter, err error) {

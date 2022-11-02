@@ -1,24 +1,63 @@
 {{define "base"}}
-<!doctype html>
-<html lang='en'>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset='utf-8'>
+    <meta charset="UTF-8">
     <title>{{template "title" .}}</title>
-    <link rel='stylesheet' href='/static/css/main.css'>
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700'>
+    <script>
+        if (window.matchMedia('(prefers-color-scheme: light)').media === 'not all') {
+            document.documentElement.style.display = 'none';
+            document.head.insertAdjacentHTML('beforeend', '<link rel="stylesheet" href="./static/css/dark.css" onload="document.documentElement.style.display = \'\'">');
+        }
+    </script>
+    <link rel="stylesheet" href="./static/css/dark.css" media="(prefers-color-scheme: dark)" />
+    <link rel="stylesheet" href="./static/css/light.css" media="(prefers-color-scheme: light)" />
+    <link rel="stylesheet" href="./static/css/style.css">
 </head>
 <body>
     <header>
-        <h1><a href='/'>Home Page</a></h1>
+        <ul class="blockmenu">
+            <div class="toggle"><ion-icon name="add-outline"></ion-icon></div>
+            <li style="--i:0;--clr:#ff2972;">
+                <a onclick="togglemodal();"><ion-icon name="home-outline"></ion-icon></a>
+            </li>
+            <li style="--i:1;--clr:#fee800;">
+                <a onclick="togglemodal();"><ion-icon name="person-outline"></ion-icon></a>
+            </li>
+            <li style="--i:2;--clr:#04fc43;">
+                <a onclick="togglemodal();"><ion-icon name="settings-outline"></ion-icon></a>
+            </li>
+            <li style="--i:3;--clr:#fe00f1;">
+                <a onclick="togglemodal();"><ion-icon name="mail-outline"></ion-icon></a>
+            </li>
+        </ul>
     </header>
-    <nav>
-        <a href='/'>Home Page</a>
-    </nav>
+
     <main>
         {{template "main" .}}
     </main>
+    
     {{template "footer" .}}
-    <script src="/static/js/main.js" type="text/javascript"></script>
+   
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        let toggle = document.querySelector('.toggle');
+        let blockmenu = document.querySelector('.blockmenu');
+        toggle.onclick = function() {
+            blockmenu.classList.toggle('active')
+        }
+        
+        function togglemodal() {
+            let modal = document.querySelector('.modal');
+            modal.classList.toggle('show')
+        }
+        
+        function boxclick(url) {
+            window.open(url, '_blank');
+        }
+    </script>
 </body>
 </html>
+
 {{end}}
