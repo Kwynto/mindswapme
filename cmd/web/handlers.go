@@ -89,36 +89,3 @@ func (app *application) outPage(w http.ResponseWriter, r *http.Request) {
 
 	http.Redirect(w, r, "/", http.StatusSeeOther)
 }
-
-func (app *application) buyPage(w http.ResponseWriter, r *http.Request) {
-	tD := &templateData{User: "", Hash: "", Cart: []string{""}, Transitions: []string{""}}
-
-	id := gosession.StartSecure(&w, r)
-
-	transitions := id.Get("transitions")
-	if transitions == nil {
-		transitions = ""
-	}
-	transitions = fmt.Sprint(transitions, " ", r.RequestURI)
-	id.Set("transitions", transitions)
-	tStr := fmt.Sprintf("%v", transitions)
-	tStrs := strings.Split(tStr, " ")
-	tD.Transitions = tStrs
-
-	cart := id.Get("cart")
-	if cart == nil {
-		cart = ""
-	}
-	sCart := app.addProduct(fmt.Sprint(cart), app.convertProduct(r.RequestURI))
-	id.Set("cart", sCart)
-	prods := strings.Split(sCart, " ")
-	tD.Cart = prods
-
-	username := id.Get("username")
-	if username != nil {
-		tD.User = fmt.Sprint(username)
-		app.render(w, r, "homeauth.page.tmpl", tD)
-	} else {
-		app.render(w, r, "home.page.tmpl", tD)
-	}
-}

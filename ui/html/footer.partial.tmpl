@@ -1,3 +1,34 @@
 {{define "footer"}}
-<footer>This is the third example of a <strong>GoLang</strong> site using <strong>GoSession</strong>.</footer>
+    <footer>
+        <div class="counters">
+            <!-- <p>This will be the counters.</p> -->
+        </div>
+        <div class="copyright">
+            <p>Developed by <a href="https://github.com/Kwynto" target="_blank">Kwynto</a>.</p>
+        </div>
+    </footer>
+
+    <div class="modal">
+        <div class="box">
+            <div class="square" style="--delay:0;"></div>
+            <div class="square" style="--delay:1;"></div>
+            <div class="square" style="--delay:2;"></div>
+            <div class="square" style="--delay:3;"></div>
+            <div class="square" style="--delay:4;"></div>
+            <div class="container">
+                <div class="btn-modal-close" onclick="togglemodal();"><ion-icon name="close-circle-outline"></ion-icon></div>
+                <h1>Title window.</h1>
+                <p>This is content of modal window.</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet tenetur maxime eius id? Voluptatem consequatur suscipit earum, libero atque amet, esse voluptate consectetur dolore aspernatur, facilis reiciendis cupiditate beatae ipsum.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab atque, dicta id eos, beatae, facere fuga quisquam minus sint quaerat explicabo! Possimus dolore necessitatibus consequatur aspernatur alias. Dignissimos, aspernatur labore.</p>
+                <p>
+                    <button class="button btn-red">Cancel</button>
+                    <button class="button btn-green">Save-Ok</button>
+                    <button class="button btn-blue">Blue Btn</button>
+                    <button class="button btn-light">Btn Light</button>
+                    <button class="button btn-dark">Btn Dark</button>
+                </p>
+            </div>
+        </div>
+    </div>
 {{end}}
