@@ -36,6 +36,8 @@ func (app *application) routes() *http.ServeMux {
 	// Routes
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", app.home)
+
+	mux.HandleFunc("/manage", app.manage)
 	mux.HandleFunc("/auth", app.authPage)
 	mux.HandleFunc("/logout", app.outPage)
 
