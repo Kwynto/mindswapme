@@ -17,7 +17,7 @@ func newTemplateCache(dir string) (map[string]*template.Template, error) {
 	cache := map[string]*template.Template{}
 
 	// We use the filepath.Glob function to get a slice of all file paths with the extension '.page.tmpl'.
-	pages, err := filepath.Glob(filepath.Join(dir, "*.page.tmpl"))
+	pages, err := filepath.Glob(filepath.Join(dir, "*.page.html"))
 	if err != nil {
 		return nil, err
 	}
@@ -32,18 +32,6 @@ func newTemplateCache(dir string) (map[string]*template.Template, error) {
 		if err != nil {
 			return nil, err
 		}
-
-		// // We use the ParseGlob method to add all the wireframe templates.
-		// ts, err = ts.ParseGlob(filepath.Join(dir, "*.layout.tmpl"))
-		// if err != nil {
-		// 	return nil, err
-		// }
-
-		// // We use the ParseGlob method to add all auxiliary templates.
-		// ts, err = ts.ParseGlob(filepath.Join(dir, "*.partial.tmpl"))
-		// if err != nil {
-		// 	return nil, err
-		// }
 
 		// Adding the resulting set of templates to the cache using the page name
 		cache[name] = ts
