@@ -42,8 +42,8 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 	username := id.Get("username")
 	if username != nil {
 		tD.User = fmt.Sprint(username)
-		app.render(w, r, "homeauth.page.tmpl", tD)
+		app.render(w, r, "homeauth.html", tD)
 	} else {
-		app.render(w, r, "home.page.tmpl", tD)
+		app.render(w, r, "home.html", tD)
 	}
 }
