@@ -17,7 +17,7 @@ func newTemplateCache(dir string) (map[string]*template.Template, error) {
 	cache := map[string]*template.Template{}
 
 	// We use the filepath.Glob function to get a slice of all file paths with the extension '.page.tmpl'.
-	pages, err := filepath.Glob(filepath.Join(dir, "*.page.html"))
+	pages, err := filepath.Glob(filepath.Join(dir, "*.html"))
 	if err != nil {
 		return nil, err
 	}
