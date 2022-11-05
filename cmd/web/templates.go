@@ -33,17 +33,17 @@ func newTemplateCache(dir string) (map[string]*template.Template, error) {
 			return nil, err
 		}
 
-		// We use the ParseGlob method to add all the wireframe templates.
-		ts, err = ts.ParseGlob(filepath.Join(dir, "*.layout.tmpl"))
-		if err != nil {
-			return nil, err
-		}
+		// // We use the ParseGlob method to add all the wireframe templates.
+		// ts, err = ts.ParseGlob(filepath.Join(dir, "*.layout.tmpl"))
+		// if err != nil {
+		// 	return nil, err
+		// }
 
-		// We use the ParseGlob method to add all auxiliary templates.
-		ts, err = ts.ParseGlob(filepath.Join(dir, "*.partial.tmpl"))
-		if err != nil {
-			return nil, err
-		}
+		// // We use the ParseGlob method to add all auxiliary templates.
+		// ts, err = ts.ParseGlob(filepath.Join(dir, "*.partial.tmpl"))
+		// if err != nil {
+		// 	return nil, err
+		// }
 
 		// Adding the resulting set of templates to the cache using the page name
 		cache[name] = ts
