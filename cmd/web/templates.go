@@ -6,11 +6,14 @@ import (
 )
 
 // Structure for the data template
-type templateData struct {
-	User        string
-	Hash        string
-	Cart        []string
-	Transitions []string
+type tmplHomeData struct {
+	Links []msmLink
+}
+
+type tmplManageData struct {
+	User  string
+	Hash  string
+	Links []msmLink
 }
 
 func newTemplateCache(dir string) (map[string]*template.Template, error) {

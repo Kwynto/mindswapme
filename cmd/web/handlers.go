@@ -1,11 +1,7 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
-	"strings"
-
-	"github.com/Kwynto/gosession"
 )
 
 func (app *application) home(w http.ResponseWriter, r *http.Request) {
@@ -14,36 +10,32 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	tD := &templateData{User: "", Hash: "", Cart: []string{""}, Transitions: []string{""}}
-
-	id := gosession.StartSecure(&w, r)
-
-	transitions := id.Get("transitions")
-	if transitions == nil {
-		transitions = ""
+	tD := tmplHomeData{
+		Links: make([]msmLink, 20),
 	}
-	transitions = fmt.Sprint(transitions, " ", r.RequestURI)
-	id.Set("transitions", transitions)
-	tStr := fmt.Sprintf("%v", transitions)
-	tStrs := strings.Split(tStr, " ")
-	tD.Transitions = tStrs
+	tD.Links = append(tD.Links,
+		msmLink{Id: "1", Link: "https://github.com/Kwynto"},
+		msmLink{Id: "2", Link: "https://github.com/Kwynto"},
+		msmLink{Id: "3", Link: "https://github.com/Kwynto"},
+		msmLink{Id: "4", Link: "https://github.com/Kwynto"},
+		msmLink{Id: "5", Link: "https://github.com/Kwynto"},
+		msmLink{Id: "6", Link: "https://github.com/Kwynto"},
+		msmLink{Id: "7", Link: "https://github.com/Kwynto"},
+		msmLink{Id: "8", Link: "https://github.com/Kwynto"},
+		msmLink{Id: "9", Link: "https://github.com/Kwynto"},
+		msmLink{Id: "10", Link: "https://github.com/Kwynto"},
+		msmLink{Id: "11", Link: "https://github.com/Kwynto"},
+		msmLink{Id: "12", Link: "https://github.com/Kwynto"},
+		msmLink{Id: "13", Link: "https://github.com/Kwynto"},
+		msmLink{Id: "14", Link: "https://github.com/Kwynto"},
+		msmLink{Id: "15", Link: "https://github.com/Kwynto"},
+		msmLink{Id: "16", Link: "https://github.com/Kwynto"},
+		msmLink{Id: "17", Link: "https://github.com/Kwynto"},
+		msmLink{Id: "18", Link: "https://github.com/Kwynto"},
+		msmLink{Id: "19", Link: "https://github.com/Kwynto"},
+	)
 
-	cart := id.Get("cart")
-	if cart == nil {
-		cart = ""
-		id.Set("cart", fmt.Sprint(cart))
-		tD.Cart = []string{"There's nothing here yet."}
-	} else {
-		sCart := fmt.Sprint(cart)
-		prods := strings.Split(sCart, " ")
-		tD.Cart = prods
-	}
+	// id := gosession.StartSecure(&w, r)
 
-	username := id.Get("username")
-	if username != nil {
-		tD.User = fmt.Sprint(username)
-		app.render(w, r, "homeauth.html", tD)
-	} else {
-		app.render(w, r, "home.html", tD)
-	}
+	app.render(w, r, "home.html", tD)
 }
