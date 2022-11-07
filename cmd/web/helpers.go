@@ -8,6 +8,11 @@ import (
 	"runtime/debug"
 )
 
+type msmLink struct {
+	Id   string
+	Link string
+}
+
 func (app *application) getMd5(text string) string {
 	h := md5.New()
 	h.Write([]byte(text))
@@ -28,7 +33,7 @@ func (app *application) notFound(w http.ResponseWriter) {
 	app.clientError(w, http.StatusNotFound)
 }
 
-func (app *application) render(w http.ResponseWriter, r *http.Request, name string, td *templateData) {
+func (app *application) render(w http.ResponseWriter, r *http.Request, name string, td any) {
 	// We extract the corresponding set of templates from the cache, depending on the page name
 	ts, ok := app.templateCache[name]
 	if !ok {

@@ -39,8 +39,8 @@ func (app *application) routes() *http.ServeMux {
 	mux.HandleFunc("/", app.home)
 
 	mux.HandleFunc("/manage", app.manage)
-	mux.HandleFunc("/auth", app.authPage)
-	mux.HandleFunc("/logout", app.outPage)
+	mux.HandleFunc("/auth", app.manageAuthPage)
+	mux.HandleFunc("/logout", app.manageOutPage)
 
 	fileServer := http.FileServer(neuteredFileSystem{http.Dir("./ui/static")})
 	mux.Handle("/static", http.NotFoundHandler())
