@@ -35,6 +35,7 @@ func (nfs neuteredFileSystem) Open(path string) (http.File, error) {
 func (app *application) routes() *http.ServeMux {
 	// Routes
 	mux := http.NewServeMux()
+
 	mux.HandleFunc("/", app.home)
 
 	mux.HandleFunc("/manage", app.manage)

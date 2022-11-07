@@ -9,11 +9,6 @@ import (
 )
 
 func (app *application) manage(w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path != "/" {
-		app.notFound(w)
-		return
-	}
-
 	tD := &templateData{User: "", Hash: "", Cart: []string{""}, Transitions: []string{""}}
 
 	id := gosession.StartSecure(&w, r)
@@ -44,7 +39,7 @@ func (app *application) manage(w http.ResponseWriter, r *http.Request) {
 		tD.User = fmt.Sprint(username)
 		app.render(w, r, "homeauth.html", tD)
 	} else {
-		app.render(w, r, "home.html", tD)
+		app.render(w, r, "manage.html", tD)
 	}
 }
 
