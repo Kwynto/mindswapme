@@ -135,6 +135,21 @@
                             </tr>
                         </thead>
                         <tbody>
+                            {{ range $key, $link := .Links }}
+                            <tr>
+                                <td>{{ $link.Id }}</td>
+                                <td>{{ $link.Id }}</td>
+                                <td><a href="{{$link.Link}}" target="_blank">{{ $link.Link }}</a></td>
+                                <td></td>
+                                <td>100</td>
+                                <td><span class="status warning">New link</span></td>
+                                <td>
+                                    <a href="#" class="btn manage-link">
+                                        <ion-icon name="apps"></ion-icon>
+                                    </a>
+                                </td>
+                            </tr>
+                            {{ end }}
                             <tr>
                                 <td>5</td>
                                 <td>sU4ng9adsjd49ssD</td>
