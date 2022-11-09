@@ -8,11 +8,6 @@ import (
 	"runtime/debug"
 )
 
-type msmLink struct {
-	Id   string
-	Link string
-}
-
 func (app *application) getMd5(text string) string {
 	h := md5.New()
 	h.Write([]byte(text))

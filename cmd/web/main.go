@@ -2,24 +2,10 @@ package main
 
 import (
 	"flag"
-	"html/template"
 	"log"
 	"net/http"
 	"os"
 )
-
-// Creating an `application` structure to store the dependencies of the entire web application.
-type application struct {
-	errorLog      *log.Logger
-	infoLog       *log.Logger
-	templateCache map[string]*template.Template
-}
-
-// Structure for configuration
-type Config struct {
-	Addr      string
-	StaticDir string
-}
 
 func main() {
 	// Reading flags from the application launch bar.

@@ -5,10 +5,6 @@ import (
 	"path/filepath"
 )
 
-type neuteredFileSystem struct {
-	fs http.FileSystem
-}
-
 // Blocking direct access to the file system
 func (nfs neuteredFileSystem) Open(path string) (http.File, error) {
 	f, err := nfs.fs.Open(path)
