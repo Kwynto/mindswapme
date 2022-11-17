@@ -1,5 +1,7 @@
 # mindswapme
-mindswapme
+This is an experimental project of a user service.
+
+**_This repository is under development._**
 
 ## About the author
 
