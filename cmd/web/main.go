@@ -5,7 +5,17 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"sync"
 )
+
+var wg sync.WaitGroup
+
+func serverStart(app *application, srv *http.Server, cfg *Config) {
+	app.infoLog.Printf("Start server: %s", cfg.Addr)
+	err := srv.ListenAndServe()
+	app.errorLog.Println(err)
+	wg.Done()
+}
 
 func main() {
 	// Reading flags from the application launch bar.
@@ -39,7 +49,8 @@ func main() {
 	}
 
 	// Starting the server
-	app.infoLog.Printf("Start server: %s", cfg.Addr)
-	err = srv.ListenAndServe()
-	app.errorLog.Fatal(err)
+	wg.Add(1)
+	go serverStart(app, srv, cfg)
+
+	wg.Wait()
 }
