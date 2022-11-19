@@ -17,6 +17,7 @@ type application struct {
 type Config struct {
 	Addr      string
 	StaticDir string
+	Start     string
 }
 
 // Blocking direct access to the file system

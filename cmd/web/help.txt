@@ -1,0 +1,7 @@
+help - A hint on the commands.
+
+start - Starting the server.
+stop - Stoping the server.
+restart - Restarting the server.
+overload - Reloading templates.
+

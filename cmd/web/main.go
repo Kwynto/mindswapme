@@ -8,23 +8,19 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strings"
 	"time"
 )
 
-// var wg sync.WaitGroup
-
-func serverStart(app *application, srv *http.Server, cfg *Config) {
-	app.infoLog.Printf("Start server: %s", cfg.Addr)
-	err := srv.ListenAndServe()
-	app.errorLog.Println(err)
-	// wg.Done()
-}
+var app *application
+var srv *http.Server
 
 func main() {
 	// Reading flags from the application launch bar.
 	cfg := new(Config)
 	flag.StringVar(&cfg.Addr, "addr", ":8080", "HTTP network address")
 	flag.StringVar(&cfg.StaticDir, "static-dir", "./ui/static", "Path to static assets")
+	flag.StringVar(&cfg.Start, "start", "no", "Do I need to start the server")
 	flag.Parse()
 
 	// Creating loggers
@@ -38,27 +34,37 @@ func main() {
 	}
 
 	// Initialize the structure with the application dependencies.
-	app := &application{
+	app = &application{
 		errorLog:      errorLog,
 		infoLog:       infoLog,
 		templateCache: templateCache,
 	}
 
-	// Server structure with address, logger and routing
-	// srv := &http.Server{
-	// 	Addr:     cfg.Addr,
-	// 	ErrorLog: errorLog,
-	// 	Handler:  app.routes(),
-	// }
-	var srv *http.Server
+	if strings.ToLower(cfg.Start) == "yes" {
+		// Starting the server
+		srv = &http.Server{
+			Addr:     cfg.Addr,
+			ErrorLog: errorLog,
+			Handler:  app.routes(),
+		}
+		go app.serverStart(srv)
+	}
 
 	time.Sleep(time.Second)
 	fmt.Println("The server is running. You can execute commands.")
+	fmt.Println("!!! Use the 'help' command to get a list of commands.")
 	fmt.Print("> ")
+
 	sc := bufio.NewScanner(os.Stdin)
 	for sc.Scan() {
 		command := sc.Text()
 		switch command {
+		case "help":
+			data, err := os.ReadFile("./cmd/web/help.txt")
+			if err != nil {
+				app.errorLog.Fatal(err)
+			}
+			os.Stdout.Write(data)
 		case "overload":
 			templateCache, err = newTemplateCache("./ui/html/")
 			if err != nil {
@@ -77,7 +83,7 @@ func main() {
 				ErrorLog: errorLog,
 				Handler:  app.routes(),
 			}
-			go serverStart(app, srv, cfg)
+			go app.serverStart(srv)
 		case "restart":
 			// ReStarting the server
 			srv.Shutdown(context.Background())
@@ -87,15 +93,11 @@ func main() {
 				ErrorLog: errorLog,
 				Handler:  app.routes(),
 			}
-			go serverStart(app, srv, cfg)
-		case "help":
-			fmt.Println("This is helping.")
+			go app.serverStart(srv)
 		default:
 			fmt.Println("Unidentified command.")
 		}
 		time.Sleep(time.Second)
 		fmt.Print("> ")
 	}
-
-	// wg.Wait()
 }
