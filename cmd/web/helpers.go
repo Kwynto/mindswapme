@@ -42,3 +42,10 @@ func (app *application) render(w http.ResponseWriter, r *http.Request, name stri
 		app.serverError(w, err)
 	}
 }
+
+// Starting the server
+func (app *application) serverStart(srv *http.Server) {
+	app.infoLog.Printf("Start server: %s", srv.Addr)
+	err := srv.ListenAndServe()
+	app.errorLog.Println(err)
+}
