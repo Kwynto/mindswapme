@@ -58,7 +58,7 @@ func main() {
 	sc := bufio.NewScanner(os.Stdin)
 	for sc.Scan() {
 		command := sc.Text()
-		switch command {
+		switch strings.ToLower(command) {
 		case "help":
 			data, err := os.ReadFile("./cmd/web/help.txt")
 			if err != nil {
@@ -94,6 +94,8 @@ func main() {
 				Handler:  app.routes(),
 			}
 			go app.serverStart(srv)
+		case "exit":
+			os.Exit(0)
 		default:
 			fmt.Println("Unidentified command.")
 		}
