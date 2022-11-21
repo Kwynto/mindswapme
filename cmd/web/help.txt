@@ -4,4 +4,5 @@ start - Starting the server.
 stop - Stoping the server.
 restart - Restarting the server.
 overload - Reloading templates.
+exit - Exit the program.
 
