@@ -40,13 +40,15 @@ func main() {
 		templateCache: templateCache,
 	}
 
+	// Setup settings for the server
+	srv = &http.Server{
+		Addr:     cfg.Addr,
+		ErrorLog: errorLog,
+		Handler:  app.routes(),
+	}
+
+	// Autorun the server
 	if strings.ToLower(cfg.Start) == "yes" {
-		// Starting the server
-		srv = &http.Server{
-			Addr:     cfg.Addr,
-			ErrorLog: errorLog,
-			Handler:  app.routes(),
-		}
 		go app.serverStart(srv)
 	}
 
