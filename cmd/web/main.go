@@ -40,13 +40,15 @@ func main() {
 		templateCache: templateCache,
 	}
 
+	// Setup settings for the server
+	srv = &http.Server{
+		Addr:     cfg.Addr,
+		ErrorLog: errorLog,
+		Handler:  app.routes(),
+	}
+
+	// Autorun the server
 	if strings.ToLower(cfg.Start) == "yes" {
-		// Starting the server
-		srv = &http.Server{
-			Addr:     cfg.Addr,
-			ErrorLog: errorLog,
-			Handler:  app.routes(),
-		}
 		go app.serverStart(srv)
 	}
 
@@ -58,7 +60,7 @@ func main() {
 	sc := bufio.NewScanner(os.Stdin)
 	for sc.Scan() {
 		command := sc.Text()
-		switch command {
+		switch strings.ToLower(command) {
 		case "help":
 			data, err := os.ReadFile("./cmd/web/help.txt")
 			if err != nil {
@@ -94,6 +96,8 @@ func main() {
 				Handler:  app.routes(),
 			}
 			go app.serverStart(srv)
+		case "exit":
+			os.Exit(0)
 		default:
 			fmt.Println("Unidentified command.")
 		}
