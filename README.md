@@ -1,7 +1,11 @@
 # mindswapme
 This is an experimental project of a user service.
 
-**_This repository is under development._**
+**_This repository is under development._**  
+
+## Support the author
+
+You can support open source projects and the author of this project. The details are [here](https://github.com/Kwynto/Kwynto/blob/main/SUPPORT.md).  
 
 ## About the author
 
